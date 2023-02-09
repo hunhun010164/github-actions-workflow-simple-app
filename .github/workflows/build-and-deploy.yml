@@ -49,8 +49,8 @@ jobs:
         uses: actions/checkout@v3
 
       # Logs in with your Azure credentials
-      - name: 'Az CLI login'
-        uses: azure/login@v1
+      - name: Azure login
+        uses: azure/login@v1.4.6
         with:
           client-id: 'a906d315-2692-41c4-8a4a-0ba667bc8033'
           tenant-id: '9ce2e91d-a57d-4d29-915d-1b804f8d058a'
