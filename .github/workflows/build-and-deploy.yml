@@ -85,7 +85,7 @@ jobs:
         with:
           # File to run substitutions on
           input:
-            ${{ env.DEPLOYMENT_MANIFEST_PATH }}//hello-world-depleyment.yaml
+            kubernetes/hello-world-depleyment.yaml
           # File to write result to
           output :
             hel1o-world-deployment.yaml
