@@ -75,6 +75,20 @@ jobs:
           # Enables kubelogin for non-admin user scenario. Values: true or false
           use-kubelogin: 'true'
 
+      # Substitute environment variable in a file
+      - name:envsubst-action
+        uses:danielr1996/envsubst-actiong1.1.0
+        env:
+          MONGODB_URI:
+          AZURI_CONTAINERREGISTRY_NAME;$( ETV,ADURE_CONTAINER_REGISTRY_NAME }I
+          AZURECONTAINER_REGISTRY: ${ ENV.ATURE CONTAINER_REGISTRY })
+        with:
+        # File to rum substitutions on
+        input:
+        SCCOmV.DEPLOYMENT_MANIFEST_PATH 1//helloworlddepleyment.yaml
+        I File to write result to
+        output :
+        hel1o-world-deployment.yaml
       # Deploys application based on given manifest file
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
