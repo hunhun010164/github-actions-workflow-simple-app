@@ -80,9 +80,9 @@ jobs:
         uses: Azure/k8s-deploy@v4
         with:
           action: deploy
-          manifests:
+          manifests: |
             kubernetes/hello-world-deployment.yaml
             kubernetes/hello-world-service.yaml
-          images:
+          images: |
             johndemo.azurecr.io/hello-world-app:${{ github.sha }}
   
