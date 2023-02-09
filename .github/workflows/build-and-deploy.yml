@@ -80,15 +80,16 @@ jobs:
         uses:danielr1996/envsubst-actiong1.1.0
         env:
           MONGODB_URI:
-          AZURI_CONTAINERREGISTRY_NAME;$( ETV,ADURE_CONTAINER_REGISTRY_NAME }I
-          AZURECONTAINER_REGISTRY: ${ ENV.ATURE CONTAINER_REGISTRY })
+          CONTAINER_NAME: hello-world-app:${{ github.sha }}
+          AZURE_CONTAINER_REGISTRY: johndemo.azurecr.io
         with:
-        # File to rum substitutions on
-        input:
-        SCCOmV.DEPLOYMENT_MANIFEST_PATH 1//helloworlddepleyment.yaml
-        I File to write result to
-        output :
-        hel1o-world-deployment.yaml
+          # File to run substitutions on
+          input:
+            ${{ env.DEPLOYMENT_MANIFEST_PATH }}//hello-world-depleyment.yaml
+          # File to write result to
+          output :
+            hel1o-world-deployment.yaml
+
       # Deploys application based on given manifest file
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
