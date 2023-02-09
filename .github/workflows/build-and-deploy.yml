@@ -79,7 +79,7 @@ jobs:
       - name: envsubst-action
         uses: danielr1996/envsubst-action@1.1.0
         env:
-          MONGODB_URI: 'mongodb://johncosmosdemo:3Xc77CFwwfhI1am89sMkRcE8hAYjCa8EOMWJE4ARoUDhdY34Pr7WtmnrFc356jB62F5IEVD27udgACDbsjl14g==@johncosmosdemo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@johncosmosdemo@'
+          MONGODB_URI: 'mongodb://johncosmosdemo:3Xc77CFwwfhI1am89sMkRcE8hAYjCa8EOMWJE4ARoUDhdY34Pr7WtmnrFc356jB62F5IEVD27udgACDbsjl14g==@johncosmosdemo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@johncosmosdemo@'
           CONTAINER_NAME: hello-world-app:${{ github.sha }}
           AZURE_CONTAINER_REGISTRY: johndemo.azurecr.io
         with:
