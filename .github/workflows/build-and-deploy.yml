@@ -1,0 +1,38 @@
+name: Build and Deploy to Azure Evn
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches: ['master']
+  workflow_dispatch:
+
+jobs:
+  BuildImage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+  
+      - name: Azure Container Registry Login
+        uses: Azure/docker-login@v1
+        with:
+          # Container registry username
+          username: 'johndemo'
+          # Container registry password
+          password: 'd4rV2fBi/HrvBWls86eTsRnmEXYz1iOeD2q+cU0kPf+ACRB7iDej'
+          # Container registry server url
+          login-server: 'johndemo.azurecr.io'
+
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: johndemo.azurecr.io/hello-world-app:${{ github.sha }}
+          file: ./Dockerfile
+
+deployToAKS:
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo "hello"
