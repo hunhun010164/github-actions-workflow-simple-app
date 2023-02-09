@@ -76,8 +76,8 @@ jobs:
           use-kubelogin: 'true'
 
       # Substitute environment variable in a file
-      - name:envsubst-action
-        uses:danielr1996/envsubst-actiong1.1.0
+      - name: envsubst-action
+        uses: danielr1996/envsubst-actiong1.1.0
         env:
           MONGODB_URI:
           CONTAINER_NAME: hello-world-app:${{ github.sha }}
