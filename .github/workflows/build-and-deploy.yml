@@ -67,7 +67,7 @@ jobs:
           # Resource Group Name
           resource-group: 'github-action-rg'
           # AKS Cluster Name
-          cluster-name: 'johndemo'
+          cluster-name: 'johnk8s'
           # AKS Cluster Subscription
           subscription: '8f7cd18e-6e8e-4601-920b-4cf3dc9e11bb'
           # Get cluster admin credentials. Values: true or false
